@@ -11,6 +11,8 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      injectRegister: "auto",
+      includeAssets: ["/android", "/ios", "/windows11"],
       manifest: {
         name: "Bazar Universal",
         short_name: "Bazar Universal",
