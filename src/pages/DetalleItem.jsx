@@ -26,7 +26,8 @@ const DetalleItem = () => {
   const addSale = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/api/addSale",
+        "https://app-3415b8c8-8b40-4d98-aa2b-3bc6564f023d.cleverapps.io/api/addSale",
+        //"http://localhost:8080/api/addSale",
         {
           method: "POST",
           headers: {
