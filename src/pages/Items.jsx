@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Busqueda from "./Busqueda";
-import products from "../assets/products.png"
+//import products from "../assets/products.png"
 
 const Items = () => {
     const { search } = useParams();
@@ -14,6 +14,7 @@ const Items = () => {
         try {
             const response = await fetch(
                 "https://app-3415b8c8-8b40-4d98-aa2b-3bc6564f023d.cleverapps.io/api/items?q=" + search
+                //"http://localhost:8080/api/items?q=" + search
             );
             const data = await response.json();
             setFilteredProducts(data);
@@ -25,7 +26,7 @@ const Items = () => {
         }
     };
 
-    // Efecto que se ejecuta cuando cambia el valor de `search`
+    
     useEffect(() => {
         getItems();
     }, [search]);
@@ -50,7 +51,7 @@ const Items = () => {
                                 style={{ width: "100%" }}
                             >
                                 <img
-                                    src={products}
+                                    src={product.thumbnail}
                                     alt={product.title}
                                     className="rounded-circle"
                                     style={{ width: "80px", height: "80px", objectFit: "cover", marginRight: "15px" }}

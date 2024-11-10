@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import productsImage from "../assets/products.png";
+//import productsImage from "../assets/products.png";
 import logo from "../assets/logoBazar.jpg";
 
 const Compras = () => {
@@ -10,6 +10,7 @@ const Compras = () => {
         try {
             const response = await fetch(
                 "https://app-3415b8c8-8b40-4d98-aa2b-3bc6564f023d.cleverapps.io/api/sales"
+                //"http://localhost:8080/api/sales"
             );
             const data = await response.json();
             console.log(data);
@@ -44,7 +45,7 @@ const Compras = () => {
                                 style={{ width: "100%" }}
                             >
                                 <img
-                                    src={productsImage}
+                                    src={compra.product.thumbnail}
                                     alt="Producto"
                                     className="rounded-circle"
                                     style={{ width: "80px", height: "80px", objectFit: "cover", marginRight: "15px" }}
